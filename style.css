@@ -1,0 +1,252 @@
+/*
+  style.css
+  Simple styles for Intel-branded hero section
+*/
+
+/* Add your CSS here */
+
+/* Import Teko font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600&display=swap');
+
+/* Set a dark blue background for the whole header */
+header {
+  background-color: #003366; /* Intel dark blue */
+  padding: 40px 0; /* Add space above and below */
+  text-align: center; /* Center all content */
+}
+
+/* Center the content inside the header */
+header > div {
+  max-width: 600px; /* Limit width for better readability */
+  margin: 0 auto; /* Center horizontally */
+  padding: 20px; /* Add padding inside the box */
+}
+
+/* Style the Intel logo */
+header img {
+  width: 120px; /* Set logo size */
+  display: block;
+  margin: 0 auto 20px auto; /* Center and add space below */
+}
+
+/* Style the main headline */
+header .main-heading {
+  /* Use a monospace font for a mono style heading */
+  font-family: 'Teko', 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', monospace;
+  font-size: 80px; /* Set heading size to 80px */
+  font-weight: 700;  /* Bold heading */
+  text-transform: uppercase; /* Capitalize all letters */
+  color: #fff; /* White for contrast on dark background */
+  text-align: center;
+  margin-top: 50px; /* 50px space below the logo */
+  margin-bottom: 16px;
+  letter-spacing: 2px; /* Slightly spaced for sharpness */
+  line-height: 0.95; /* Make lines closer together */
+}
+
+/* Style the subheading/description */
+header p {
+  color: #d3d3d3; /* Light gray for subheading */
+  font-size: 1.1em;
+  margin-bottom: 0;
+}
+
+/* Gradient separator between logo and heading */
+.header-separator {
+  width: 50%;
+  max-width: 350px;
+  height: 4px;
+  margin: 24px auto;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #00c6fb, #005bea, #00ffb8, #ffffff);
+}
+
+/* Timeline Section Styles */
+
+/* Container for all cards */
+section {
+  display: flex; /* Use Flexbox to arrange cards */
+  flex-direction: row; /* Row by default (horizontal) */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  gap: 20px; /* Space between cards */
+  padding: 30px 10px; /* Padding around the timeline */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  scroll-snap-type: x mandatory; /* Enable horizontal scroll snap */
+}
+
+/* Card styles for consistent look */
+section > div {
+  font-family: Arial, Helvetica, sans-serif; /* Simple, clean font */
+  background: #f5f5f5; /* Light background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Subtle shadow */
+  min-width: 250px; /* Minimum width for each card */
+  max-width: 300px; /* Maximum width for each card */
+  flex: 0 0 250px; /* Prevent cards from shrinking too much */
+  padding: 20px; /* Space inside cards */
+  text-align: center; /* Center text in cards */
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  position: relative; /* Needed for absolute hover text */
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  overflow: visible;
+  scroll-snap-align: start; /* Snap each card to the start of the container */
+  height: 550px; /* Fixed height for cards on large screens */
+  box-sizing: border-box; /* Padding and border included in height */
+  overflow: hidden; /* Prevent content from overflowing */
+}
+
+/* Card spacing */
+section {
+  gap: 20px;
+}
+
+/* Card hover effect: background and shadow */
+section > div:hover {
+  background: #e6ecf5; /* Slightly different light blue */
+  transform: translateY(-8px) scale(1.05); /* Slightly enlarge card on hover */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* Hidden extra info section inside each card */
+.card-extra {
+  display: none; /* Hidden by default */
+  margin-top: 14px;
+  color: #003366;
+  font-size: 0.98em;
+  background: #eaf2fb;
+  border-radius: 6px;
+  padding: 10px;
+  max-height: 60px; /* Limit extra info height */
+  overflow: hidden;
+  opacity: 0; /* Hide by default */
+  transition: opacity 0.3s;
+}
+
+/* Show extra info on hover */
+section > div:hover .card-extra {
+  display: block;
+  opacity: 1; /* Fade in extra info on hover */
+}
+
+/* Card images */
+section img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+/* Responsive Timeline Styles for All Devices */
+
+section {
+  display: flex; /* Use Flexbox for layout */
+  flex-direction: row; /* Horizontal cards by default */
+  overflow-x: auto; /* Enable horizontal scroll */
+  gap: 20px; /* Space between cards */
+  padding: 30px 10px; /* Padding around timeline */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  scroll-snap-type: x mandatory; /* Snap cards into place */
+}
+
+section > div {
+  background: #f5f5f5; /* Light card background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Subtle shadow */
+  min-width: 250px; /* Minimum card width */
+  max-width: 300px; /* Maximum card width */
+  flex: 0 0 250px; /* Prevent shrinking */
+  padding: 20px; /* Space inside card */
+  text-align: center; /* Center text */
+  font-family: Arial, Helvetica, sans-serif; /* Consistent font */
+  scroll-snap-align: start; /* Snap to start of container */
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  height: 550px; /* Fixed height for cards on large screens */
+  box-sizing: border-box; /* Padding and border included in height */
+  overflow: hidden; /* Prevent content from overflowing */
+}
+
+section > div:hover {
+  background: #e6ecf5; /* Slightly blue on hover */
+  transform: translateY(-8px) scale(1.05); /* Slightly enlarge card on hover */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.card-extra {
+  display: none; /* Hidden by default */
+  margin-top: 14px;
+  color: #003366;
+  font-size: 0.98em;
+  background: #eaf2fb;
+  border-radius: 6px;
+  padding: 10px;
+  max-height: 60px; /* Limit extra info height */
+  overflow: hidden;
+  opacity: 0; /* Hide by default */
+  transition: opacity 0.3s;
+}
+
+section > div:hover .card-extra {
+  display: block;
+  opacity: 1; /* Fade in extra info on hover */
+}
+
+section img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+/* Tablet: Stack cards vertically and fill width on medium screens */
+@media (max-width: 1024px) {
+  section {
+    gap: 16px;
+    padding: 24px 4px;
+  }
+  section > div {
+    min-width: 220px;
+    max-width: 90vw;
+    flex: 0 0 220px;
+  }
+}
+
+/* Mobile: Stack cards vertically, fill most of the screen */
+@media (max-width: 768px) {
+  section {
+    flex-direction: column; /* Stack vertically */
+    align-items: center; /* Center cards */
+    gap: 24px;
+    overflow-x: visible; /* No horizontal scroll */
+    scroll-snap-type: none; /* Disable snap on mobile */
+  }
+  section > div {
+    min-width: 90vw;
+    max-width: 95vw;
+    flex: 1 1 auto;
+  }
+}
+
+/* Media query for small devices (700px and below): Adjust main heading size */
+@media (max-width: 700px) {
+  header .main-heading {
+    font-size: 50px; /* Set heading size to 50px */
+  }
+  section > div {
+    height: auto; /* Flexible height on small screens */
+    min-height: 0;
+    overflow: visible;
+  }
+}
+
+/* Add space below timeline for scroll/hint text */
+section + p {
+  margin-top: 18px;
+  text-align: center;
+  color: #555;
+}
+
+/* Comments included to help beginners understand each part. */
