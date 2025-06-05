@@ -64,7 +64,7 @@ header p {
 /* Timeline Section Styles */
 
 /* Container for all cards */
-section {
+.timeline-cards-section { /* Changed from 'section' to '.timeline-cards-section' */
   display: flex; /* Use Flexbox to arrange cards */
   flex-direction: row; /* Row by default (horizontal) */
   overflow-x: auto; /* Enable horizontal scrolling */
@@ -75,7 +75,7 @@ section {
 }
 
 /* Card styles for consistent look */
-section > div {
+.timeline-cards-section > div { /* Changed from 'section > div' to '.timeline-cards-section > div' */
   font-family: Arial, Helvetica, sans-serif; /* Simple, clean font */
   background: #f5f5f5; /* Light background */
   border-radius: 10px; /* Rounded corners */
@@ -99,12 +99,12 @@ section > div {
 }
 
 /* Card spacing */
-section {
+.timeline-cards-section { /* Changed from 'section' to '.timeline-cards-section' */
   gap: 20px;
 }
 
 /* Card hover effect: background and shadow */
-section > div:hover {
+.timeline-cards-section > div:hover { /* Changed from 'section > div:hover' to '.timeline-cards-section > div:hover' */
   background: #e6ecf5; /* Slightly different light blue */
   transform: translateY(-8px) scale(1.05); /* Slightly enlarge card on hover */
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
@@ -126,13 +126,13 @@ section > div:hover {
 }
 
 /* Show extra info on hover */
-section > div:hover .card-extra {
+.timeline-cards-section > div:hover .card-extra { /* Changed from 'section > div:hover .card-extra' to '.timeline-cards-section > div:hover .card-extra' */
   display: block;
   opacity: 1; /* Fade in extra info on hover */
 }
 
 /* Card images */
-section img {
+.timeline-cards-section img { /* Changed from 'section img' to '.timeline-cards-section img' */
   width: 100%;
   height: auto;
   border-radius: 6px;
@@ -141,7 +141,7 @@ section img {
 
 /* Responsive Timeline Styles for All Devices */
 
-section {
+.timeline-cards-section { /* Changed from 'section' to '.timeline-cards-section' */
   display: flex; /* Use Flexbox for layout */
   flex-direction: row; /* Horizontal cards by default */
   overflow-x: auto; /* Enable horizontal scroll */
@@ -151,7 +151,7 @@ section {
   scroll-snap-type: x mandatory; /* Snap cards into place */
 }
 
-section > div {
+.timeline-cards-section > div { /* Changed from 'section > div' to '.timeline-cards-section > div' */
   background: #f5f5f5; /* Light card background */
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Subtle shadow */
@@ -169,7 +169,7 @@ section > div {
   overflow: hidden; /* Prevent content from overflowing */
 }
 
-section > div:hover {
+.timeline-cards-section > div:hover { /* Changed from 'section > div:hover' to '.timeline-cards-section > div:hover' */
   background: #e6ecf5; /* Slightly blue on hover */
   transform: translateY(-8px) scale(1.05); /* Slightly enlarge card on hover */
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
@@ -189,12 +189,12 @@ section > div:hover {
   transition: opacity 0.3s;
 }
 
-section > div:hover .card-extra {
+.timeline-cards-section > div:hover .card-extra { /* Changed from 'section > div:hover .card-extra' to '.timeline-cards-section > div:hover .card-extra' */
   display: block;
   opacity: 1; /* Fade in extra info on hover */
 }
 
-section img {
+.timeline-cards-section img { /* Changed from 'section img' to '.timeline-cards-section img' */
   width: 100%;
   height: auto;
   border-radius: 6px;
@@ -203,11 +203,11 @@ section img {
 
 /* Tablet: Stack cards vertically and fill width on medium screens */
 @media (max-width: 1024px) {
-  section {
+  .timeline-cards-section { /* Changed from 'section' to '.timeline-cards-section' */
     gap: 16px;
     padding: 24px 4px;
   }
-  section > div {
+  .timeline-cards-section > div { /* Changed from 'section > div' to '.timeline-cards-section > div' */
     min-width: 220px;
     max-width: 90vw;
     flex: 0 0 220px;
@@ -216,14 +216,14 @@ section img {
 
 /* Mobile: Stack cards vertically, fill most of the screen */
 @media (max-width: 768px) {
-  section {
+  .timeline-cards-section { /* Changed from 'section' to '.timeline-cards-section' */
     flex-direction: column; /* Stack vertically */
     align-items: center; /* Center cards */
     gap: 24px;
     overflow-x: visible; /* No horizontal scroll */
     scroll-snap-type: none; /* Disable snap on mobile */
   }
-  section > div {
+  .timeline-cards-section > div { /* Changed from 'section > div' to '.timeline-cards-section > div' */
     min-width: 90vw;
     max-width: 95vw;
     flex: 1 1 auto;
@@ -235,7 +235,7 @@ section img {
   header .main-heading {
     font-size: 50px; /* Set heading size to 50px */
   }
-  section > div {
+  .timeline-cards-section > div { /* Changed from 'section > div' to '.timeline-cards-section > div' */
     height: auto; /* Flexible height on small screens */
     min-height: 0;
     overflow: visible;
@@ -243,7 +243,7 @@ section img {
 }
 
 /* Add space below timeline for scroll/hint text */
-section + p {
+.timeline-cards-section + p { /* Changed from 'section + p' to '.timeline-cards-section + p' */
   margin-top: 18px;
   text-align: center;
   color: #555;
