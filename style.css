@@ -311,73 +311,53 @@ header p {
   }
 }
 
-/* Make timeline cards section scrollable horizontally on mobile, but stack vertically on very small screens */
-@media (max-width: 700px) {
+/*
+  Stack timeline cards vertically and fill the width for screens 777px and below.
+  Above 777px, show cards in a horizontal row with scroll.
+  Remove any other conflicting media queries for .timeline-cards-section below.
+*/
+@media (max-width: 777px) {
   .timeline-cards-section {
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    overflow-x: visible;
-    scroll-snap-type: none;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 16px !important;
+    overflow-x: visible !important;
+    scroll-snap-type: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .timeline-cards-section > div {
-    min-width: 90vw;
-    max-width: 95vw;
-    flex: 1 1 auto;
-    height: auto;
-    min-height: 0;
-    overflow: visible;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-bottom: 0 !important;
+    flex: 1 1 auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
   }
 }
 
-/*
-  On screens smaller than Bootstrap's md (768px), make all main sections (timeline, 3-column, newsletter, accordion)
-  use the same full-width, vertical stacking, and spacing for a consistent look.
-  This matches Bootstrap's grid breakpoints and prevents the zoomed out or broken timeline between 700-777px.
-*/
-@media (max-width: 767.98px) {
-  .timeline-cards-section,
-  .container.mt-5.mb-5 .row,
-  .container.my-5,
-  .container.mb-5 {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
+@media (min-width: 778px) {
   .timeline-cards-section {
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 16px;
-    overflow-x: visible;
-    scroll-snap-type: none;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 30px 10px;
+    width: auto;
+    max-width: 100%;
   }
   .timeline-cards-section > div {
-    min-width: 0;
-    max-width: 100%;
-    width: 100%;
-    margin-bottom: 0;
-    flex: 1 1 auto;
-    height: auto;
-    min-height: 0;
-    overflow: visible;
-  }
-  .container.mt-5.mb-5 .row {
-    flex-direction: column !important;
-    gap: 16px;
-  }
-  .container.mt-5.mb-5 .col-md-4 {
-    max-width: 100%;
-    flex: 1 1 100%;
-    margin-bottom: 0;
-  }
-  .container.my-5,
-  .container.mb-5 {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    min-width: 250px;
+    max-width: 300px;
+    flex: 0 0 250px;
+    height: 550px;
   }
 }
 
