@@ -242,11 +242,143 @@ header p {
   }
 }
 
+/* On mobile screens, stack timeline cards vertically and remove horizontal scroll */
+@media (max-width: 700px) {
+  .timeline-cards-section {
+    display: flex;
+    flex-direction: column !important; /* Stack vertically */
+    align-items: stretch !important;
+    gap: 0 !important; /* Remove custom gap, use Bootstrap spacing */
+    overflow-x: visible !important;
+    scroll-snap-type: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .timeline-cards-section > div {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 1.5rem; /* Use Bootstrap's spacing scale */
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+  .timeline-cards-section > div:last-child {
+    margin-bottom: 0;
+  }
+}
+
 /* Add space below timeline for scroll/hint text */
 .timeline-cards-section + p { /* Changed from 'section + p' to '.timeline-cards-section + p' */
   margin-top: 18px;
   text-align: center;
   color: #555;
+}
+
+/* Make accordion header icon and text wrap nicely on small screens */
+.accordion-button .bi {
+  font-size: 1.2em;
+}
+
+/* Ensure accordion header text doesn't overflow on mobile */
+.accordion-button {
+  white-space: normal;
+  word-break: break-word;
+  align-items: center;
+}
+
+/* Add margin below newsletter and accordion for spacing on mobile */
+@media (max-width: 576px) {
+  .container.my-5, .container.mb-5 {
+    margin-bottom: 2rem !important;
+    margin-top: 2rem !important;
+  }
+  .accordion-button {
+    font-size: 1.1em;
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* Make sure 3-column section stacks vertically on mobile */
+@media (max-width: 768px) {
+  .container.mt-5.mb-5 .row {
+    flex-direction: column;
+  }
+  .container.mt-5.mb-5 .col-md-4 {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+}
+
+/* Make timeline cards section scrollable horizontally on mobile, but stack vertically on very small screens */
+@media (max-width: 700px) {
+  .timeline-cards-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+  .timeline-cards-section > div {
+    min-width: 90vw;
+    max-width: 95vw;
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+}
+
+/*
+  On screens smaller than Bootstrap's md (768px), make all main sections (timeline, 3-column, newsletter, accordion)
+  use the same full-width, vertical stacking, and spacing for a consistent look.
+  This matches Bootstrap's grid breakpoints and prevents the zoomed out or broken timeline between 700-777px.
+*/
+@media (max-width: 767.98px) {
+  .timeline-cards-section,
+  .container.mt-5.mb-5 .row,
+  .container.my-5,
+  .container.mb-5 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .timeline-cards-section {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+  .timeline-cards-section > div {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 0;
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+  .container.mt-5.mb-5 .row {
+    flex-direction: column !important;
+    gap: 16px;
+  }
+  .container.mt-5.mb-5 .col-md-4 {
+    max-width: 100%;
+    flex: 1 1 100%;
+    margin-bottom: 0;
+  }
+  .container.my-5,
+  .container.mb-5 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
 }
 
 /* Comments included to help beginners understand each part. */
